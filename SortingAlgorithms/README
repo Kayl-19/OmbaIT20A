@@ -1,0 +1,87 @@
+ Sorting Algorithms Activity
+
+ Unsa ang gibuhat sa program
+
+Ang `SortingAlgorithms.java` kay usa ka Java program nga nag ayo og mga numero gikan sa pinakagamay paingon sa pinakadako. Tulo ka lahi nga pamaagi ang gigamit niini: Bubble Sort, Selection Sort, ug Insertion Sort. Adunay tig isa ka method para sa matag algorithm.
+
+Sa `main()`, nagbuhat ko og array nga adunay 12 ka number nga gubot pa ang han-ay. Dayon naghimo ko og tig isa ka kopya sa original nga array para sa matag algorithm, aron parehas ang sinugdanan sa tanan. Pagkahuman sa pag sort, gi print sa program ang original nga array ug ang resulta sa matag algorithm.
+
+Output sa program:
+
+```
+Original array : [64, 25, 12, 22, 11, 90, 34, 7, 58, 3, 45, 19]
+
+Bubble Sort    : [3, 7, 11, 12, 19, 22, 25, 34, 45, 58, 64, 90]
+Selection Sort : [3, 7, 11, 12, 19, 22, 25, 34, 45, 58, 64, 90]
+Insertion Sort : [3, 7, 11, 12, 19, 22, 25, 34, 45, 58, 64, 90]
+```
+
+Pareho ang resulta sa tanan, pero lahi ang paagi sa pag-abot niini.
+
+Unsaon pag-run:
+
+```
+javac SortingAlgorithms.java
+java SortingAlgorithms
+```
+
+Unsaon pag-work sa Bubble Sort
+
+Gitandi niya ang duha ka magkatapad nga numero. Kung mas dako ang numero sa wala kaysa sa numero sa tuo, ilisan niya ang ilang pwesto (swap). Balikon kini gikan sa sinugdanan hangtod sa katapusan sa array. Tungod niini, ang pinakadako nga numero mo-"lutaw" paingon sa luyo sama sa bula sa tubig. Sa matag round, usa ka numero ang makaabot sa saktong pwesto sa luyo, mao nga mugubo na ang tan-awon sa sunod nga round. Kung walay swap nga nahitabo sa usa ka round, ibig sabihin sorted na ang array, mao nga mohunong na ang program.
+
+Unsaon pag-work sa Selection Sort
+
+Pangitaon niya ang pinakagamay nga numero sa bahin sa array nga wala pa na-sort. Kung nakit-an na, i-swap kini sa numero nga naa sa unang pwesto sa bahin nga wala pa na-sort. Unya sunod nga pwesto na, pangitaon na usab ang pinakagamay sa nahibilin, ug balikon hangtod mahuman ang tanan. Usa ra ka swap kada round, apan kinahanglan gyud nga tan-awon ang tanang nahibilin nga numero aron makuha ang pinakagamay.
+
+Unsaon pag-work sa Insertion Sort
+
+Parehas kini sa pag-ayo og baraha sa kamot. Ang unang numero giisip nga sorted na. Unya kuhaon ang sunod nga numero (ang `key`) ug itandi sa mga numero sa iyang wala. Ang mga numero nga mas dako kaysa sa `key` i-usog paingon sa tuo, hangtod makit-an ang saktong buslot. Didto na ibutang ang `key`. Balikon kini sa tanang numero hangtod nga ang tibuok array sorted na.
+
+Kalainan sa tulo ka algorithm
+
+	Bubble Sort
+
+- Unsaon pag-ayo: gitandi ang magkatapad nga numero ug gi-swap kung sayop ang han-ay.
+- Gidaghanon sa swap: daghan.
+- Kung sorted na ang array: paspas kaayo kung naay `swapped` check, O(n).
+- Time complexity sa pinakagrabe nga kaso: O(n²).
+
+	Selection Sort
+
+- Unsaon pag-ayo: pangitaon ang pinakagamay nga numero ug ibutang sa unahan.
+- Gidaghanon sa swap: gamay, usa ra kada round.
+- Kung sorted na ang array: hinay gihapon kay tan-awon gihapon ang tanang nahibilin, O(n²).
+- Time complexity sa pinakagrabe nga kaso: O(n²).
+
+	Insertion Sort
+
+- Unsaon pag-ayo: ibutang ang matag numero sa saktong buslot sa sorted nga bahin.
+- Gidaghanon sa swap: walay swap, kondili pag-usog sa mga numero.
+- Kung sorted na ang array: paspas kaayo, O(n).
+- Time complexity sa pinakagrabe nga kaso: O(n²).
+
+	Para sa tulo: maayo ang performance kung gamay ra ang numero, ug mohinay na kung daghan na ang numero.
+
+Ang pinakadako nga kalainan kay unsaon pagpili sa numero nga ibutang sa saktong pwesto. Ang Bubble Sort nagsalig sa daghang swap sa magkatapad nga numero. Ang Selection Sort nagpili sa pinakagamay sa tanang nahibilin. Ang Insertion Sort nagkuha og usa ka numero ug mangita og buslot niini sa sorted nga bahin.
+
+ 	Mga Pangutana sa Reflection
+
+ 1. Unsaon sa matag sorting algorithm pag-arrange sa mga numero? Unsa ang naghimo nga lahi ang ilang proseso? 
+
+Ang Bubble Sort nag-ayo pinaagi sa pagtandi ug pag-swap sa magkatapad nga numero, hangtod ang dagko moabot sa luyo. Ang Selection Sort nangita sa pinakagamay sa nahibilin ug gibutang kini sa unahan. Ang Insertion Sort mokuha og usa ka numero ug gibutang kini sa saktong buslot sulod sa sorted nga bahin. Lahi sila tungod kay lahi ang ilang paagi sa pagpili ug paglihok sa numero. Ang usa nagsalig sa swap, ang usa sa pagpangita, ug ang usa sa pagsuksok.
+
+ 2. Sa tulo ka sorting algorithm, hain ang pinakasayon sabton ug i-implement? Ngano? 
+
+Para nako, ang Bubble Sort ang pinakasayon, kay ang ideya niini simple ra: tandi ang duha ka numero, ug kung sayop ang han-ay, i-swap. Dili kinahanglan nga huna-hunaon pa ang pagpangita sa gamay o ang pag-usog sa mga numero. Duha ra ka loop ug usa ka kondisyon ang gamiton.
+
+ 3. Kung sorted na ang mga numero, hain nga algorithm ang mas maayo ang performance? Ipasabot base sa unsaon nila pag-work. 
+
+Ang Insertion Sort ang mas maayo, ug ang Bubble Sort pud kung naay check kung adunay swap. Sa Insertion Sort, itandi ra ang matag numero sa numero sa iyang wala. Kung sorted na, dili na kinahanglan mag-usog, mao nga hapit usa ra ka tandi kada numero (O(n)). Sa Bubble Sort nga naay `swapped` check, usa ra ka round ang kinahanglan kay mahibaw-an niya nga walay swap, mao nga mohunong na siya. Ang Selection Sort mao ang dili makabenepisyo, kay mangita gihapon siya sa pinakagamay sa tanang nahibilin bisan sorted na (O(n²)).
+
+ 4. Unsa ang mahitabo kung dugangan nako ang mga numero sa array? Unsaon nga maapektuhan ang performance sa matag algorithm? 
+
+Mas hinay na ang tanan. Ang tulo ka algorithm kay O(n²), ibig sabihon kung doblehon ang gidaghanon sa numero, mga upat ka pilo ang dugang nga trabaho. Ang Bubble Sort kasagaran ang pinakahinay tungod sa daghan nga swap. Ang Selection Sort kanunay nga parehas ang gidaghanon sa pagtandi bisan unsa pa ang han-ay. Ang Insertion Sort mas maayo kung hapit na sorted ang datos, apan hinay usab kung gubot kaayo. Para sa dagkong datos, mas maayo ang uban nga algorithm sama sa Merge Sort o Quick Sort.
+
+ 5. Isip usa ka future programmer, ngano nga importante nga masabtan ang lain-laing sorting algorithm imbes usa ra ang gamiton? 
+
+Kay lahi-lahi ang sitwasyon sa datos. Ang usa ka algorithm mahimong maayo kung gamay ra ang datos o hapit na sorted, apan hinay kung dako kaayo ang datos. Kung masabtan nako ang matag usa, mapili nako ang labing angay sa problema, sama sa gidak-on sa datos, kung sorted na ba kini, ug kung hain ang importante: tulin o simple nga code. Makatabang pud kini sa paghunahuna og logic, ug dali nako masabtan ang mas komplikado nga algorithm sa umaabot.
